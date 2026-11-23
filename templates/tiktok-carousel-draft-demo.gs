@@ -19,6 +19,9 @@
  * This is a generic teaching template. It is not the author's personal setup.
  */
 
+// ============================================================================
+// SECTION 1 - SETTINGS YOU REPLACE IN THE VISIBLE CODE
+// ============================================================================
 const CONFIG = {
   // Google Drive folder that contains daily folders such as 2026-11-23.
   DRIVE_PARENT_FOLDER_ID: 'REPLACE_THIS_WITH_YOUR_GOOGLE_DRIVE_PARENT_FOLDER_ID',
@@ -46,6 +49,9 @@ const CONFIG = {
   TIKTOK_PHOTO_INIT_URL: 'https://open.tiktokapis.com/v2/post/publish/content/init/',
 };
 
+// ============================================================================
+// SECTION 2 - PRIVATE VALUES YOU ADD IN SCRIPT PROPERTIES
+// ============================================================================
 /**
  * PRIVATE SCRIPT PROPERTIES TO ADD IN APPS SCRIPT
  * Project Settings > Script properties > Add script property
@@ -55,6 +61,9 @@ const CONFIG = {
  * TIKTOK_RELAY_SECRET     - matches your private relay environment variable
  */
 
+// ============================================================================
+// SECTION 3 - BUTTONS YOU RUN IN APPS SCRIPT
+// ============================================================================
 /** Run this first to preview the folder, order, and caption without sending anything. */
 function previewTodaysCarousel() {
   const folder = findTodaysFolder_();
@@ -82,6 +91,9 @@ function startTikTokAuthorization() {
   });
 }
 
+// ============================================================================
+// SECTION 4 - TIKTOK AUTHORIZATION
+// ============================================================================
 /** TikTok sends the approved authorization back here. Do not run this yourself. */
 function authCallback(request) {
   if (!request || request.parameter.error || !request.parameter.code) {
@@ -101,6 +113,9 @@ function authCallback(request) {
   }
 }
 
+// ============================================================================
+// SECTION 5 - SEND ONE DRAFT AND PREVENT DUPLICATES
+// ============================================================================
 /** Sends one Upload to TikTok draft. It never publishes publicly. */
 function sendTodaysCarouselToTikTok() {
   try {
@@ -172,6 +187,9 @@ function installDailyMorningTrigger() {
     .create();
 }
 
+// ============================================================================
+// SECTION 6 - FIND TODAY'S DRIVE FOLDER, CSV, AND NUMBERED IMAGES
+// ============================================================================
 function findTodaysFolder_() {
   const dateName = Utilities.formatDate(new Date(), CONFIG.TIME_ZONE, 'yyyy-MM-dd');
   const matches = DriveApp.getFolderById(CONFIG.DRIVE_PARENT_FOLDER_ID).getFoldersByName(dateName);
@@ -212,6 +230,9 @@ function getConsecutiveSlides_(folder) {
   return slides.map(item => item.file);
 }
 
+// ============================================================================
+// SECTION 7 - TOKEN REFRESH AND PRIVATE RELAY UPLOAD
+// ============================================================================
 function getValidTikTokAccessToken_() {
   const raw = PropertiesService.getUserProperties().getProperty('TIKTOK_TOKEN');
   if (!raw) return null;
@@ -265,6 +286,9 @@ function uploadSlideToRelay_(file, batchId, slideNumber) {
   return body;
 }
 
+// ============================================================================
+// SECTION 8 - STATUS FILE, RELAY CLEANUP, EMAIL ALERTS, AND SMALL HELPERS
+// ============================================================================
 function fingerprint_(folder, payload) {
   const csv = requiredFile_(folder, CONFIG.CSV_FILE_NAME);
   const ingredients = payload.slides.map(file => file.getId() + ':' + file.getLastUpdated().getTime()).join('|') + '|' + csv.getId() + ':' + csv.getLastUpdated().getTime();
