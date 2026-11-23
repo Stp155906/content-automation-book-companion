@@ -9,7 +9,7 @@ Start with the folder that matches the chapter you are reading. Copy the templat
 1. Read **Part 1** of the book to choose your content format.
 2. Open [`templates/drive-folder-structure.md`](templates/drive-folder-structure.md) and set up your Google Drive folders.
 3. Copy [`templates/post-copy-template.csv`](templates/post-copy-template.csv) into a new Google Sheet.
-4. Read the real-style demo and setup guide: [`templates/tiktok-carousel-draft-demo.gs`](templates/tiktok-carousel-draft-demo.gs) and [`guides/tiktok-carousel-demo-setup.md`](guides/tiktok-carousel-demo-setup.md).
+4. Copy the complete working-style demo: [`templates/tiktok-carousel-draft-demo.gs`](templates/tiktok-carousel-draft-demo.gs), then follow [`guides/tiktok-carousel-demo-setup.md`](guides/tiktok-carousel-demo-setup.md) line by line.
 5. Return to the book before connecting any third-party account.
 
 ## What belongs here

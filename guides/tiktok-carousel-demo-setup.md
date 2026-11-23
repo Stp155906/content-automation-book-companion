@@ -16,7 +16,7 @@ You need:
 
 1. Open `script.google.com` and click **New project**.
 2. Open the `Code.gs` file.
-3. Replace everything in it with the contents of [`tiktok-carousel-draft-demo.gs`](../templates/tiktok-carousel-draft-demo.gs).
+3. Replace everything in it with the contents of [`tiktok-carousel-draft-demo.gs`](../templates/tiktok-carousel-draft-demo.gs). This is the complete demo - do not use an abbreviated configuration-only file.
 4. At the top of the code, replace every `REPLACE_THIS...` value with your own information.
 5. Open **Project Settings** and set your time zone.
 6. Copy the **Script ID** from Project Settings.
