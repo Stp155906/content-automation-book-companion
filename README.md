@@ -10,7 +10,8 @@ Start with the folder that matches the chapter you are reading. Copy the templat
 2. Start at [`start-here/README.md`](start-here/README.md) and follow the steps in order.
 3. Copy the complete script in [`templates/tiktok-carousel-draft-demo.gs`](templates/tiktok-carousel-draft-demo.gs).
 4. Use [`examples/carousel-example/README.md`](examples/carousel-example/README.md) to compare your finished folder with a complete example.
-5. If something fails, open [`troubleshooting/README.md`](troubleshooting/README.md) before changing code.
+5. Use [`prompts/01-daily-content-to-google-drive.md`](prompts/01-daily-content-to-google-drive.md) to plan the content-to-Drive part of the system.
+6. If something fails, open [`troubleshooting/README.md`](troubleshooting/README.md) before changing code.
 
 ## What belongs here
 
@@ -21,6 +22,9 @@ Start with the folder that matches the chapter you are reading. Copy the templat
 - Every configuration value, permission, file name, and test step in one numbered order.
 - An example system readers can compare against and an updates folder for post-publication changes.
 - Troubleshooting notes that can be updated after the book is published.
+- A workflow planning worksheet, a single-image example, and copy-ready book language.
+- Planning worksheets for future YouTube Shorts and Pinterest workflows. Those
+  worksheets are not represented as tested API upload code.
 
 ## What never belongs here
 
@@ -33,3 +37,10 @@ Whenever you see a value like `REPLACE_THIS_WITH_YOUR_DRIVE_FOLDER_ID`, replace 
 ## Reader note
 
 This companion supports a **draft-first** TikTok workflow. It prepares a draft for the account owner to review, edit, add music to, and publish manually in TikTok.
+
+## Copying into your book
+
+You may copy the plain-language pages into your manuscript. For long code,
+use a short explanation in the book plus a direct GitHub link or QR code to the
+file. Code stays readable, can receive corrections after publication, and
+readers avoid typing pages of punctuation from an e-book.
